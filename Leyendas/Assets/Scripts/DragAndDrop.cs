@@ -39,31 +39,6 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginD
 
         if (transform.parent == dragParent)
         {
-            //if (transform.position.x > 270)
-            //{
-            //    transform.position = new Vector3(270f, Input.mousePosition.y, transform.position.z);
-            //}
-
-            //else if (transform.position.x < -270)
-            //{
-            //    transform.position = new Vector3(-270f, Input.mousePosition.y, transform.position.z);
-            //}
-
-            //else if (transform.position.y > 60)
-            //{
-            //    transform.position = new Vector3(Input.mousePosition.x, 60, transform.position.z);
-            //}
-
-            //else if (transform.position.y < -280)
-            //{
-            //    transform.position = new Vector3(Input.mousePosition.x, -280f, transform.position.z);
-            //}
-
-            //else
-            //{
-            //    transform.position = Input.mousePosition;
-            //}
-
             transform.position = Input.mousePosition;
             transform.SetParent(startParent);
         }

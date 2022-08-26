@@ -7,10 +7,8 @@ public class dropSlot : MonoBehaviour, IDropHandler
 {
     public GameObject item;
 
-    private void Start()
-    {
-        
-    }
+    public bool funciona = false;
+
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -27,6 +25,14 @@ public class dropSlot : MonoBehaviour, IDropHandler
         if (item != null && item.transform.parent != transform)
         {
             item = null;
+            //Añadido para resolver el puzle
+            funciona = false;
+        }
+
+        //Añadido para resolver el puzle, ampliar
+        if (item != null && item.transform.parent == transform && item.tag == "Ojos")
+        {
+            funciona = true;
         }
     }
 
