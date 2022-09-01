@@ -7,6 +7,13 @@ TagManager:
   - DragParent
   - Ojos
   - OutLimit
+  - SlotOjos
+  - Cabeza
+  - SlotCabeza
+  - Boca
+  - SlotBoca
+  - Ropa
+  - SlotRopa
   layers:
   - Default
   - TransparentFX
