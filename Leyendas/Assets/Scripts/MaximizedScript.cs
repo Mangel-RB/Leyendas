@@ -45,7 +45,6 @@ public class MaximizedScript : MonoBehaviour
             maxImg.SetActive(true);
             uvImg.SetActive(false);
             bisturiImg.SetActive(false);
-
         }
     }
 }
