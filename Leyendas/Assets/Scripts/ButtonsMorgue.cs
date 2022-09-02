@@ -14,6 +14,16 @@ public class ButtonsMorgue : MonoBehaviour
     public int[] guess = new int[5];
     public int numGuess = 0;
 
+    #region NumberImages
+
+    public GameObject[] Numb1 = new GameObject[10];
+    public GameObject[] Numb2 = new GameObject[10];
+    public GameObject[] Numb3 = new GameObject[10];
+    public GameObject[] Numb4 = new GameObject[10];
+    public GameObject[] Numb5 = new GameObject[10];
+
+    #endregion
+
     public void Start()
     {
         guessReset();
@@ -178,33 +188,43 @@ public class ButtonsMorgue : MonoBehaviour
             switch (EventSystem.current.currentSelectedGameObject.name)
             {
                 case "1":
+                    PrintNumbers(1, numGuess);
                     guess[numGuess] = 1;
                     break;
                 case "2":
+                    PrintNumbers(2, numGuess);
                     guess[numGuess] = 2;
                     break;
                 case "3":
+                    PrintNumbers(3, numGuess);
                     guess[numGuess] = 3;
                     break;
                 case "4":
+                    PrintNumbers(4, numGuess);
                     guess[numGuess] = 4;
                     break;
                 case "5":
+                    PrintNumbers(5, numGuess);
                     guess[numGuess] = 5;
                     break;
                 case "6":
+                    PrintNumbers(6, numGuess);
                     guess[numGuess] = 6;
                     break;
                 case "7":
+                    PrintNumbers(7, numGuess);
                     guess[numGuess] = 7;
                     break;
                 case "8":
+                    PrintNumbers(8, numGuess);
                     guess[numGuess] = 8;
                     break;
                 case "9":
+                    PrintNumbers(9, numGuess);
                     guess[numGuess] = 9;
                     break;
                 case "0":
+                    PrintNumbers(0, numGuess);
                     guess[numGuess] = 0;
                     break;
             }
@@ -217,20 +237,78 @@ public class ButtonsMorgue : MonoBehaviour
         }
     }
 
+    public void PrintNumbers(int number, int numGuess)
+    {
+        switch (numGuess)
+        {
+            case 0:
+                Numb1[0].SetActive(false);
+                Numb1[number].SetActive(true);
+                break;
+            case 1:
+                Numb2[0].SetActive(false);
+                Numb2[number].SetActive(true);
+                break;
+            case 2:
+                Numb3[0].SetActive(false);
+                Numb3[number].SetActive(true);
+                break;
+            case 3:
+                Numb4[0].SetActive(false);
+                Numb4[number].SetActive(true);
+                break;
+            case 4:
+                Numb5[0].SetActive(false);
+                Numb5[number].SetActive(true);
+                break;
+        }
+    }
+
     public void guessReset()
     {
         numGuess = 0;
+        guessedNum = 0;
 
         for (int i = 0; i < 5; ++i)
         {
+            print(i + ". antes: " + guess[i]);
             guess[i] = 0;
+            print(i + ". ahora: " + guess[i]);
+        }
+
+        for (int i = 0; i < 10; ++i)
+        {
+            if(i == 0) Numb1[i].SetActive(true);
+            else Numb1[i].SetActive(false);
+        }
+
+        for (int i = 0; i < 10; ++i)
+        {
+            if (i == 0) Numb2[i].SetActive(true);
+            else Numb2[i].SetActive(false);
+        }
+
+        for (int i = 0; i < 10; ++i)
+        {
+            if (i == 0) Numb3[i].SetActive(true);
+            else Numb3[i].SetActive(false);
+        }
+
+        for (int i = 0; i < 10; ++i)
+        {
+            if (i == 0) Numb4[i].SetActive(true);
+            else Numb4[i].SetActive(false);
+        }
+
+        for (int i = 0; i < 10; ++i)
+        {
+            if (i == 0) Numb5[i].SetActive(true);
+            else Numb5[i].SetActive(false);
         }
     }
 
     public void takeGuess()
     {
-        guessedNum = 0;
-
         for (int i = 0; i < 5; ++i)
         {
             guessedNum = guessedNum * 10 + guess[i];
@@ -239,7 +317,7 @@ public class ButtonsMorgue : MonoBehaviour
         print(guessedNum);
 
         if (guessedNum == solution) print("OLEEE");
-        else guessedNum = 0;
+        else guessReset();
     }
 
 }
