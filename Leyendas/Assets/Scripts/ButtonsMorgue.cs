@@ -180,8 +180,6 @@ public class ButtonsMorgue : MonoBehaviour
 
     public void CodeButton()
     {
-        print(numGuess);
-
         if (numGuess < 5)
         {
 
@@ -271,9 +269,7 @@ public class ButtonsMorgue : MonoBehaviour
 
         for (int i = 0; i < 5; ++i)
         {
-            print(i + ". antes: " + guess[i]);
             guess[i] = 0;
-            print(i + ". ahora: " + guess[i]);
         }
 
         for (int i = 0; i < 10; ++i)
@@ -313,8 +309,6 @@ public class ButtonsMorgue : MonoBehaviour
         {
             guessedNum = guessedNum * 10 + guess[i];
         }
-
-        print(guessedNum);
 
         if (guessedNum == solution) print("OLEEE");
         else guessReset();
