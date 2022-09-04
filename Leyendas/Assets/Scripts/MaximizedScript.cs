@@ -18,7 +18,7 @@ public class MaximizedScript : MonoBehaviour
 
     public void UVButton()
     {
-        if (!uvImg.active)
+        if (!uvImg.activeInHierarchy)
         {
             maxImg.SetActive(false);
             bisturiImg.SetActive(false);
@@ -34,7 +34,7 @@ public class MaximizedScript : MonoBehaviour
 
     public void BisturiButton()
     {
-        if (!bisturiImg.active)
+        if (!bisturiImg.activeInHierarchy)
         {
             maxImg.SetActive(false);
             uvImg.SetActive(false);
@@ -45,7 +45,6 @@ public class MaximizedScript : MonoBehaviour
             maxImg.SetActive(true);
             uvImg.SetActive(false);
             bisturiImg.SetActive(false);
-
         }
     }
 }
