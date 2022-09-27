@@ -303,14 +303,14 @@ public class ButtonsMorgue : MonoBehaviour
         }
     }
 
-    public void takeGuess()
+    public void takeGuess(string sceneName)
     {
         for (int i = 0; i < 5; ++i)
         {
             guessedNum = guessedNum * 10 + guess[i];
         }
 
-        if (guessedNum == solution) print("OLEEE");
+        if (guessedNum == solution) SceneManager.LoadScene(sceneName);
         else guessReset();
     }
 
